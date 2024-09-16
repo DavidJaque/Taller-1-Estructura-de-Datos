@@ -22,4 +22,4 @@ public:
     bool estaPrestado() const;
 };
 
-#endif // MATERIALBIBLIOGRAFICO_HPP
+#endif // MATERIALBIBLIOGRAFICO_HPP   

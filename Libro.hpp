@@ -1,7 +1,7 @@
 #ifndef LIBRO_H
 #define LIBRO_H
 
-#include "MaterialBibliografico.hpp"
+#include "MaterialBibliografico.hpp"    // hereda de MaterialBibliografico
 
 class Libro : public MaterialBibliografico {
 private:
