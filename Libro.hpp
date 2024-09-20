@@ -1,5 +1,5 @@
-#ifndef LIBRO_H
-#define LIBRO_H
+#ifndef LIBRO_HPP
+#define LIBRO_HPP
 
 #include "MaterialBibliografico.hpp"    // hereda de MaterialBibliografico
 

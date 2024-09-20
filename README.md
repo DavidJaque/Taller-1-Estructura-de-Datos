@@ -1,4 +1,8 @@
 # Taller-1-Estructura-de-Datos
+
+Desarrollador:
+David Ignacio Jaque Torrejón    /   RUT:   20996192-K
+
 Desarrollar una biblioteca digital para el Taller 1 de Estructura de Datos
 
 El proyecto consiste en crear un sistema que permita a los usuarios de la biblioteca realizar acciones como agregar nuevos libros, buscar libros por título o autor, y gestionar el préstamo de libros.

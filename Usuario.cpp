@@ -24,7 +24,7 @@ bool Usuario::prestarMaterial(MaterialBibliografico* material) {
 
 bool Usuario::devolverMaterial(string isbn) {
     for (int i = 0; i < cantidadMateriales; ++i) {
-        if (materialesPrestados[i]->isbn == isbn) {
+        if (materialesPrestados[i]->getISBN() == isbn) {
             materialesPrestados[i]->devolver();
             delete materialesPrestados[i];
             for (int j = i; j < cantidadMateriales - 1; ++j) {

@@ -16,10 +16,12 @@ public:
     MaterialBibliografico(string nombre, string isbn, string autor);
     virtual ~MaterialBibliografico(); // Destructor
 
-    virtual void mostrarInformacion() const = 0; // Método virtual puro
+    virtual void mostrarInformacion() const = 0; // metodo virtual 
     void prestar();
     void devolver();
     bool estaPrestado() const;
+    string getISBN() const;
+
 };
 
 #endif // MATERIALBIBLIOGRAFICO_HPP   
