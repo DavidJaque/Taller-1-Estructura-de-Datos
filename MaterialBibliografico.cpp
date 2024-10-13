@@ -20,7 +20,7 @@ bool MaterialBibliografico::estaPrestado() const {
     return prestado;
 }
 
-//  se crea un método para obtener el ISBN que es invisible desde otra clase
+//  se crea un método para obtener el ISBN q es invisible desde otra clase
 string MaterialBibliografico::getISBN() const {
     return isbn;
 }

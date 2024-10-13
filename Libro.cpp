@@ -6,6 +6,6 @@ Libro::Libro(string nombre, string isbn, string autor, string fechaPublicacion, 
 
 void Libro::mostrarInformacion() const {
     cout << "Libro: " << nombre << "\nISBN: " << isbn << "\nAutor: " << autor
-         << "\nFecha de Publicación: " << fechaPublicacion << "\nResumen: " << resumen
+         << "\nFecha de publicacion: " << fechaPublicacion << "\nResumen: " << resumen
          << "\nEstado: " << (estaPrestado() ? "Prestado" : "Disponible") << endl;
 }

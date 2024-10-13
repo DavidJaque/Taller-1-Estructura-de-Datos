@@ -31,9 +31,9 @@ void agregarLibro() {
         cin >> resumen;
 
         biblioteca[cantidadMateriales++] = new Libro(nombre, isbn, autor, fechaPublicacion, resumen);
-        cout << "Libro agregado exitosamente." << endl;
+        cout << "Libro agregado exitosamente" << endl;
     } else {
-        cout << "La biblioteca está llena." << endl;
+        cout << "La biblioteca está llena" << endl;
     }
 }
 
@@ -48,15 +48,15 @@ void agregarRevista() {
         cin >> isbn;
         cout << "Ingrese autor: ";
         cin >> autor;
-        cout << "Ingrese número de edición: ";
+        cout << "Ingrese numero de edicion: ";
         cin >> numeroEdicion;
-        cout << "Ingrese mes de publicación: ";
+        cout << "Ingrese mes de publicacion: ";
         cin >> mesPublicacion;
 
         biblioteca[cantidadMateriales++] = new Revista(nombre, isbn, autor, numeroEdicion, mesPublicacion);
-        cout << "Revista agregada exitosamente." << endl;
+        cout << "Revista agregada " << endl;
     } else {
-        cout << "La biblioteca está llena." << endl;
+        cout << "La biblioteca esta llena " << endl;
     }
 }
 
@@ -80,7 +80,7 @@ void buscarMaterial() {
             return;
         }
     }
-    cout << "Material no encontrado." << endl;
+    cout << "Material no encontrado " << endl;
 }
 
 // Función para prestar un material a un usuario
@@ -97,16 +97,16 @@ void prestarMaterial() {
         if (biblioteca[i]->getISBN() == isbn && !biblioteca[i]->estaPrestado()) {
             for (int j = 0; j < cantidadUsuarios; ++j) {
                 if (usuarios[j]->prestarMaterial(biblioteca[i])) {
-                    cout << "Material prestado con éxito." << endl;
+                    cout << "Material prestado " << endl;
                     return;
                 }
             }
         }
     }
-    cout << "No se pudo prestar el material." << endl;
+    cout << "No se pudo prestar el material" << endl;
 }
 
-// Función para devolver un material
+// Funcion para devolver un material
 void devolverMaterial() {
     int idUsuario;
     string isbn;
@@ -125,8 +125,9 @@ void devolverMaterial() {
     cout << "No se pudo devolver el material." << endl;
 }
 
-// Función para agregar un usuario
-void agregarUsuario() {
+// Función para agregsr un usuario
+void agregarUsuario() 
+{
     if (cantidadUsuarios < MAX_USUARIOS) {
         string nombre;
         int id;
@@ -136,26 +137,41 @@ void agregarUsuario() {
         cin >> id;
 
         usuarios[cantidadUsuarios++] = new Usuario(nombre, id);
-        cout << "Usuario agregado exitosamente." << endl;
+        cout << "Usuario agregado exitosamente" << endl;
     } else {
-        cout << "La lista de usuarios está llena." << endl;
+        cout << "La lista de usuarios está llena" << endl;
     }
 }
 
-// Menú principal
-void menu() {
+// Función para buscar un usuario
+void buscarUsuario() {
+    
+}
+
+// Función para eliminar un usuario
+void eliminarUsuario() 
+{
+        
+}
+
+// Menu principal
+void menu() 
+{
     int opcion;
     do {
         cout << "\n----- MENU -----\n";
-        cout << "1. Agregar Libro\n";
-        cout << "2. Agregar Revista\n";
-        cout << "3. Mostrar Materiales\n";
-        cout << "4. Buscar Material\n";
-        cout << "5. Prestar Material\n";
-        cout << "6. Devolver Material\n";
-        cout << "7. Agregar Usuario\n";
-        cout << "8. Salir\n";
-        cout << "Ingrese una opción: ";
+        cout << "1. Agregar libro\n";
+        cout << "2. Agregar revista\n";
+        cout << "3. Mostrar materiales\n";
+        cout << "4. Buscar material\n";
+        cout << "5. Prestar material\n";
+        cout << "6. Devolver material\n";
+        cout << "7. Agregar usuario\n";
+        cout << "8. Buscar usuario\n";
+        cout << "9. Eliminar usuario\n";
+
+        cout << "0. Salir\n";
+        cout << "Ingrese opcion (0 para salir): ";
         cin >> opcion;
 
         switch (opcion) {
@@ -166,13 +182,16 @@ void menu() {
             case 5: prestarMaterial(); break;
             case 6: devolverMaterial(); break;
             case 7: agregarUsuario(); break;
-            case 8: cout << "Saliendo..." << endl; break;
-            default: cout << "Opción inválida." << endl;
+            case 8: buscarUsuario(); break;
+            case 9: eliminarUsuario(); break;
+            case 0: cout << "Saliendo..." << endl; break;
+            default: cout << "Opcion invvalida " << endl;
         }
-    } while (opcion != 8);
+    } while (opcion != 0);
 }
 
-int main() {
+int main() 
+{
     menu();
     return 0;
 }
