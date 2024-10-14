@@ -2,8 +2,10 @@
 
 Desarrollador:
 David Ignacio Jaque Torrejón    /   RUT:   20996192-K
+david.jaque@alumnos.ucn.cl      /   Paralelo C2
 
-Desarrollar una biblioteca digital para el Taller 1 de Estructura de Datos
+
+Instrucción: Desarrollar una biblioteca digital para el Taller 1 de Estructura de Datos
 
 El proyecto consiste en crear un sistema que permita a los usuarios de la biblioteca realizar acciones como agregar nuevos libros, buscar libros por título o autor, y gestionar el préstamo de libros.
 
@@ -53,3 +55,58 @@ Organización del Código: El proyecto debe estar dividido en varios archivos .c
         Crear un menú simple en consola para interactuar con el simulador (opciones como agregar libros, prestar materiales, listar materiales, etc.).
     • Persistencia de Datos:
         Agregar la funcionalidad de guardar y cargar el estado de la biblioteca y los usuarios desde archivos de texto, utilizando fstream de C++.
+
+
+*OBJETOS*
+
+*Usuario*
+Los objetos de la clase Usuario representan a cada usuario de la biblioteca (deben ser creados). Cada usuario tiene un nombre (string) y un ID (int) único. A través del menú en el main.cpp, se podrán agregar, buscar y eliminar usuarios.
+
+Ejemplo de creación de objeto:  usuario1: { nombre: "David"; id: 28372; }
+
+*MateriaBibliográfico*
+Los objetos de la clase MaterialBibliografico representan los materiales (pueden ser libros o revistas) que se pueden agregar a la biblioteca.
+
+Ejemplo de creación de objeto tipo Libro:
+
+    libro1: { 
+        nombre: "1984"; 
+        isbn: "978-3-16-148410-0"; 
+        autor: "George Orwell"; 
+        fechaPublicacion: "1949"; 
+        resumen: "Distopia. En un futuro totalitario, Winston Smith lucha por la verdad y la libertad contra el Partido."
+    }
+    
+Ejemplo de creación de objeto tipo Revista:
+
+    revista1: { 
+    nombre: "National Geographic"; 
+    isbn: "123-4-5678-9101"; 
+    autor: "National Geographic Society"; 
+    numeroEdicion: 202; 
+    mesPublicacion: "Enero" 
+    }
+
+
+*EJEMPLO INGRESO TERMINAL*
+Para macOS:
+
+g++ main.cpp Libro.cpp Revista.cpp Usuario.cpp MaterialBibliografico.cpp -o biblioteca
+
+./biblioteca
+
+
+*LO QUE MUESTRA EL MENU*
+
+----- MENU -----
+1. Agregar libro
+2. Agregar revista
+3. Mostrar materiales
+4. Buscar material
+5. Prestar material
+6. Devolver material
+7. Agregar usuario
+8. Buscar usuario
+9. Eliminar usuario
+0. Salir
+Ingrese opcion (0 para salir):  
