@@ -24,3 +24,5 @@ bool MaterialBibliografico::estaPrestado() const {
 string MaterialBibliografico::getISBN() const {
     return isbn;
 }
+
+

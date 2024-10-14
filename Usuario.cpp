@@ -13,6 +13,15 @@ Usuario::~Usuario() {
     }
 }
 
+string Usuario::getNombre() const {  
+    return nombre;
+}
+
+int Usuario::getID() const { 
+    return id;
+}
+
+
 bool Usuario::prestarMaterial(MaterialBibliografico* material) {
     if (cantidadMateriales < 5 && !material->estaPrestado()) {
         materialesPrestados[cantidadMateriales++] = material;
@@ -42,3 +51,4 @@ void Usuario::mostrarMaterialesPrestados() const {
         materialesPrestados[i]->mostrarInformacion();
     }
 }
+

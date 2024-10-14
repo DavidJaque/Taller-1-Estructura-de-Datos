@@ -16,7 +16,8 @@ int cantidadMateriales = 0;
 int cantidadUsuarios = 0;
 
 // Función para agregar un nuevo libro
-void agregarLibro() {
+void agregarLibro() 
+{
     if (cantidadMateriales < MAX_MATERIALES) {
         string nombre, isbn, autor, fechaPublicacion, resumen;
         cout << "Ingrese nombre del libro: ";
@@ -38,7 +39,8 @@ void agregarLibro() {
 }
 
 // Función para agregar una nueva revista
-void agregarRevista() {
+void agregarRevista() 
+{
     if (cantidadMateriales < MAX_MATERIALES) {
         string nombre, isbn, autor, mesPublicacion;
         int numeroEdicion;
@@ -61,7 +63,8 @@ void agregarRevista() {
 }
 
 // Función para mostrar todos los materiales
-void mostrarMateriales() {
+void mostrarMateriales() 
+{
     for (int i = 0; i < cantidadMateriales; ++i) {
         biblioteca[i]->mostrarInformacion();
         cout << "--------------------------------------" << endl;
@@ -69,7 +72,8 @@ void mostrarMateriales() {
 }
 
 // Función para buscar material por título o autor
-void buscarMaterial() {
+void buscarMaterial() 
+{
     string termino;
     cout << "Ingrese el nombre o autor del material que desea buscar: ";
     cin >> termino;
@@ -84,7 +88,8 @@ void buscarMaterial() {
 }
 
 // Función para prestar un material a un usuario
-void prestarMaterial() {
+void prestarMaterial() 
+{
     int idUsuario;
     string isbn;
     
@@ -107,7 +112,8 @@ void prestarMaterial() {
 }
 
 // Funcion para devolver un material
-void devolverMaterial() {
+void devolverMaterial() 
+{
     int idUsuario;
     string isbn;
 
@@ -143,16 +149,51 @@ void agregarUsuario()
     }
 }
 
-// Función para buscar un usuario
-void buscarUsuario() {
-    
+// metodo para buscar un usuario
+void buscarUsuario() 
+{
+    int ID;
+    cout << "Ingrese el ID del usuario que desea buscar: ";
+    cin >> ID;
+
+    for (int i = 0; i < cantidadUsuarios; ++i) {
+        if (usuarios[i]->getID() == ID) {
+            cout << "Usuario encontrado: " << usuarios[i]->getNombre() << endl;
+            return;
+        }
+    }
+    cout << "Usuario no encontrado" << endl;
 }
+
+
 
 // Función para eliminar un usuario
 void eliminarUsuario() 
 {
-        
+    int id;
+    cout << "Ingrese el ID del usuario que desea eliminar: ";
+    cin >> id;
+
+    for (int i = 0; i < cantidadUsuarios; ++i) {
+        if (usuarios[i]->getID() == id) {
+            // liberar memoria
+            delete usuarios[i];
+
+            // mover los usuarios restantes hacia la izquierda
+            for (int j = i; j < cantidadUsuarios - 1; ++j) {
+                usuarios[j] = usuarios[j + 1];
+            }
+            usuarios[--cantidadUsuarios] = nullptr; // reduce cantidad y limpia el último
+            cout << "Usuario eliminado " << endl;
+            return;
+        }
+    }
+    cout << "Error: el usuario no se encuentra registrado " << endl;
+
 }
+
+
+
 
 // Menu principal
 void menu() 

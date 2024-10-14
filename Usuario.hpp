@@ -15,9 +15,13 @@ public:
     Usuario(string nombre, int id);
     ~Usuario();
 
+    string getNombre() const;
+    int getID() const;
+
     bool prestarMaterial(MaterialBibliografico* material);
     bool devolverMaterial(string isbn);
     void mostrarMaterialesPrestados() const;
+
 };
 
 #endif 

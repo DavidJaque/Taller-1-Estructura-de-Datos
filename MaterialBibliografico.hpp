@@ -22,6 +22,7 @@ public:
     bool estaPrestado() const;
     string getISBN() const;
 
+    
 };
 
 #endif // MATERIALBIBLIOGRAFICO_HPP   
